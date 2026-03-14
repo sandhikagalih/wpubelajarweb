@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Complex Selectors</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      color: #333;
+    }
+
+    ul li {
+      color: navy;
+    }
+
+    ul>li {
+      outline: 1px solid red;
+    }
+
+    h2+p {
+      background-color: khaki;
+      font-style: italic;
+    }
+
+    h3~span {
+      color: red;
+      text-decoration: underline;
+    }
+
+    a.btn {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Complex Selectors Demo</h1>
+
+  <h2>1. Keluarga (Parent 🏠 & Child 👶)</h2>
+  <ul>
+    <li>👶 Anak 1 (Kena Child > & Descendant Spasi)</li>
+    <li>👶 Anak 2 (Kena Child > & Descendant Spasi)
+      <ol>
+        <li>👶 Cucu 1 (Hanya kena Descendant Spasi, Child > TIDAK KENA)</li>
+        <li>👶 Cucu 2 (Warna biru, tapi tidak bold)</li>
+      </ol>
+    </li>
+    <li>👶 Anak 3</li>
+  </ul>
+
+  <hr>
+
+  <h2>2. Saudara (Sibling 👦 & Adik 📝)</h2>
+
+  <p>📝 Adik Kandung (Kena background kuning karena ada PERSIS setelah h2)</p>
+
+  <p>📝 Sepupu Jauh (Biasa saja, tidak kena + karena terhalang p di atasnya)</p>
+
+  <h3>Judul Kecil (Kakak)</h3>
+  <span>🏷️ Adik 1 (Merah karena General Sibling ~)</span><br>
+  <span>🏷️ Adik 2 (Merah juga)</span><br>
+  <a href="#">Link Tetangga (Tidak kena)</a><br>
+  <span>🏷️ Adik 3 (Merah juga, meskipun terhalang link)</span>
+
+  <hr>
+
+  <h2>3. Compound Selectors (Gabungan)</h2>
+
+  <a href="#">Link Biasa</a> <br><br>
+
+  <a href="#" class="btn">Tombol Hitam (a.btn)</a> <br><br>
+
+  <a href="#" class="btn primary">Tombol Biru (.btn.primary)</a> <br><br>
+
+  <div class="btn danger">Div Tombol Merah (.btn.danger)</div>
+
+</body>
+
+</html>
