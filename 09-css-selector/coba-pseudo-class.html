@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Pseudo-classes Part 1</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .link-demo:link {
+      color: royalblue;
+    }
+
+    .link-demo:visited {
+      color: salmon;
+    }
+
+    .btn {
+      background-color: orange;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: darkorange;
+    }
+
+    .btn:active {
+      background-color: orangered;
+      transform: scale(0.95);
+    }
+
+    input:focus {
+      background-color: lightyellow;
+      border: 2px solid orange;
+      outline: none;
+    }
+
+    .target-box {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 10px;
+    }
+
+    .target-box:target {
+      background-color: lightgreen;
+      border: 2px solid green;
+      color: darkgreen;
+      font-weight: bold;
+    }
+
+    input:disabled {
+      background-color: #eee;
+      cursor: not-allowed;
+    }
+
+    input:enabled {
+      border: 1px solid #aaa;
+    }
+
+    input[type="checkbox"]:checked+label {
+      color: green;
+      font-weight: bold;
+      text-decoration: line-through;
+    }
+
+    .input-email {
+      border: 2px solid #ccc;
+      padding: 5px;
+    }
+
+    .input-email:invalid {
+      border-color: red;
+      background-color: #ffe6e6;
+    }
+
+    .input-email:valid {
+      border-color: green;
+      background-color: #e6ffe6;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    li:first-child {
+      background-color: #333;
+      color: white;
+    }
+
+    li:nth-child(even) {
+      background-color: salmon;
+    }
+
+    li:last-child {
+      background-color: #eee;
+    }
+
+    li:nth-child(3) {
+      background-color: lightgreen;
+    }
+
+    .kotak-kosong {
+      width: 100px;
+      height: 50px;
+      background-color: crimson;
+      margin-bottom: 20px;
+    }
+
+    .kotak-kosong:empty {
+      background-color: salmon;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Playground Pseudo-classes</h1>
+
+  <h2>1. Historic States (:link, :visited)</h2>
+  <a href="https://google.com" class="link-demo" target="_blank">Google (Mungkin Visited)</a> |
+  <a href="https://website-asal-asalan-123.com" class="link-demo" target="_blank">Link Asal (Pasti Link)</a>
+
+  <h2>2. Interactive States (:hover, :active, :focus, :target)</h2>
+
+  <button class="btn">Hover & Click Me!</button>
+  <br><br>
+
+  <input type="text" placeholder="Klik saya (Focus)">
+  <br><br>
+
+  <p>Navigasi Target:</p>
+  <a href="#kotak1" class="btn">Buka Kotak 1</a>
+  <a href="#kotak2" class="btn">Buka Kotak 2</a>
+
+  <div id="kotak1" class="target-box">
+    Ini KOTAK 1 (Klik tombol di atas agar saya jadi :target)
+  </div>
+  <div id="kotak2" class="target-box">
+    Ini KOTAK 2 (Klik tombol di atas agar saya jadi :target)
+  </div>
+
+
+  <h2>3. Form States (:disabled, :checked)</h2>
+
+  <input type="text" disabled placeholder="Saya Disabled">
+  <input type="text" placeholder="Saya Enabled">
+  <br><br>
+
+  <input type="checkbox" id="tugas1">
+  <label for="tugas1">Belajar HTML</label>
+  <br>
+  <input type="checkbox" id="tugas2" checked>
+  <label for="tugas2">Belajar CSS (Checked)</label>
+
+
+  <h2>4. Validation States (:valid, :invalid)</h2>
+  <p>Coba ketik email yang salah (tanpa @), lalu ketik email yang benar.</p>
+  <form>
+    <input type="email" class="input-email" placeholder="Masukkan email...">
+  </form>
+
+
+  <h2>5. Index & Occurrence (:nth-child dll)</h2>
+
+  <ul>
+    <li>Item 1 (First Child - Hitam)</li>
+    <li>Item 2 (Genap - Merah)</li>
+    <li>Item 3 (Ke-3 - Garis Bawah)</li>
+    <li>Item 4 (Genap - Merah)</li>
+    <li>Item 5 (Biasa)</li>
+    <li>Item 6 (Last Child - Abu)</li>
+  </ul>
+
+  <h3>Empty State (:empty)</h3>
+  <p>Kotak pink di bawah ini muncul karena elemennya KOSONG.</p>
+  <div class="kotak-kosong"></div>
+
+</body>
+
+</html>
