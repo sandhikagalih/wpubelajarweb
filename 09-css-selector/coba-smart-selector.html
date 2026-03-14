@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Smart Selector</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    h2 {
+      text-decoration: underline;
+      color: #333;
+    }
+
+    :is(header, main, footer) h3 {
+      color: navy;
+      font-style: italic;
+    }
+
+    .gallery {
+      text-align: center;
+    }
+
+    .gallery img {
+      width: 100px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .gallery:hover img:not(:hover) {
+      opacity: 0.3;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      background-color: white;
+      outline: 1px solid #ddd;
+      color: #333;
+    }
+
+    .badge {
+      background-color: red;
+      color: white;
+      font-size: 0.8em;
+    }
+
+    li:has(.badge) {
+      background-color: rgb(255, 227, 227);
+      font-weight: bold;
+    }
+
+    li:has(img) {
+      background-color: rgb(220, 255, 255);
+      color: teal;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Advanced Pseudo-classes (:is, :not, :has)</h1>
+
+  <h2>1. The Grouper (:is)</h2>
+  <header>
+    <section>
+      <h3>Judul Header</h3>
+    </section>
+  </header>
+  <main>
+    <section>
+      <h3>Judul Main</h3>
+    </section>
+  </main>
+  <footer>
+    <section>
+      <h3>Judul Footer</h3>
+    </section>
+  </footer>
+
+
+  <h2>2. The Excluder (:not)</h2>
+  <p>Hover salah satu gambar:</p>
+  <div class="gallery">
+    <img src="https://picsum.photos/id/10/100" alt="Gbr 1">
+    <img src="https://picsum.photos/id/20/100" alt="Gbr 2">
+    <img src="https://picsum.photos/id/30/100" alt="Gbr 3">
+    <img src="https://picsum.photos/id/40/100" alt="Gbr 4">
+  </div>
+
+
+  <h2>3. The Parent Selector (:has)</h2>
+
+  <ul>
+    <li>
+      Item Biasa (Tidak ada efek)
+    </li>
+
+    <li>
+      Item Spesial <span class="badge">PROMO</span>
+      (Background berubah merah karena ada badge)
+    </li>
+
+    <li>
+      <img src="https://picsum.photos/id/50/30/30" alt="Icon">
+      Item dengan Gambar
+      (Background berubah biru karena ada img)
+    </li>
+  </ul>
+
+</body>
+
+</html>
