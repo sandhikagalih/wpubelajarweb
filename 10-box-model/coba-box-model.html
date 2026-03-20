@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coba Box Model</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .kotak1 {
+      width: 300px;
+      height: 300px;
+      background-color: lightblue;
+      /* margin-top: -200px;
+      margin-right: 0;
+      margin-bottom: 40px;
+      margin-left: -20px; */
+      /* margin: 50px; */
+      /* ke-4 sisi 50px*/
+      /* margin: 50px auto; */
+      /* atas bawah 50px, kiri kanan auto*/
+      /* margin: 50px auto 100px; */
+      /* atas 50px, kiri kanan auto, bawah 100px */
+      margin: 10px 20px 30px 40px;
+      /* atas 10px, searah jarum jam */
+      /* padding-top: 50px;
+      padding-left: 20px; */
+      padding: 50px;
+
+      /* border-right: 5px solid green; */
+      border: 10px solid purple;
+    }
+
+    .kotak2 {
+      width: 200px;
+      height: 200px;
+      background-color: salmon;
+      margin-top: -50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="kotak1">1</div>
+  <div class="kotak2">2</div>
+</body>
+
+</html>
