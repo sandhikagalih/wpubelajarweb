@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #1a1a1a;
+}
+
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+header .genre-tags {
+  margin-top: 10px;
+}
+
+header .genre-tags .tag {
+  display: inline-block;
+  background-color: #06b6d4;
+  padding: 6px 16px;
+  margin: 0 5px;
+  border-radius: 20px;
+  font-size: 0.9em;
+}
+
+main {
+  width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main .profile-card {
+  background-color: white;
+  padding: 40px;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  text-align: center;
+}
+
+main .profile-card .artist-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #06b6d4;
+  margin-bottom: 20px;
+}
+
+main .profile-card .bio {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+main .profile-card .bio p {
+  margin-bottom: 15px;
+}
+
+main .profile-card .stats {
+  margin-top: 30px;
+}
+
+main .profile-card .stats .stat-item {
+  display: inline-block;
+  width: 150px;
+  padding: 20px;
+  background-color: #f9f8f8;
+  margin: 10px 20px;
+  border-radius: 8px;
+  border: 2px solid #bdf5ff;
+}
+
+main .profile-card .stats .stat-item .stat-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: #06b6d4;
+}
+
+main .profile-card .stats .stat-item .stat-label {
+  font-size: 0.9em;
+  color: #666;
+}
+
+main .discography {
+  margin: 50px 0;
+}
+
+main .discography h2,
+main .social-links h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+main .discography .album-list {
+  text-align: center;
+}
+
+main .discography .album-list .album-card {
+  display: inline-block;
+  width: 200px;
+  margin: 15px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+main .discography .album-list .album-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+main .discography .album-list .album-card h3 {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+main .discography .album-list .album-card p {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+main .discography .album-list .album-card .btn-listen {
+  display: inline-block;
+  background-color: #06b6d4;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+main .discography .album-list .album-card .btn-listen:hover {
+  background-color: #07c7e9;
+}
+
+main .social-links {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f8f8;
+  border-radius: 12px;
+  margin: 30px 0;
+}
+
+main .social-links .social-btn {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main .social-links .social-btn:hover {
+  background-color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #1a1a1a;
+  color: white;
+  margin-top: 50px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #06b6d4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
