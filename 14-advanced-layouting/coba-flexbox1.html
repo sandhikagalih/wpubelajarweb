@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Flexbox 1 - Container Properties</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif, Arial;
+      background-color: #f1f5f9;
+      color: #334155;
+      padding: 50px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #1e293b;
+    }
+
+    h2 {
+      margin-top: 80px;
+      margin-bottom: 20px;
+      border-left: 5px solid #3b82f6;
+      padding-left: 15px;
+      color: #1e40af;
+    }
+
+    p {
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      color: white;
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+      line-height: 150px;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .satu {
+      background-color: #BADA55;
+    }
+
+    .dua {
+      background-color: #9b59b6;
+    }
+
+    .tiga {
+      background-color: #f1c40f;
+    }
+
+    .empat {
+      background-color: #e67e22;
+    }
+
+    .lima {
+      background-color: #e74c3c;
+    }
+
+    .container {
+      background-color: #fff;
+      border: 4px dashed #cbd5e1;
+      margin-bottom: 20px;
+      min-height: 200px;
+    }
+
+    .container1 {
+      display: flex;
+    }
+
+    .container2 {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .container3 {
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .container4 {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .container5 {
+      height: 300px;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .container5 .dua {
+      height: 200px;
+      font-size: 5em;
+    }
+
+    .container5 .tiga {
+      height: 100px;
+      font-size: 0.5em;
+    }
+
+    .container6 {
+      width: 450px;
+      height: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Mengenal Flexbox Container</h1>
+
+  <h2>1. display: flex</h2>
+  <p>Secara default (Normal Flow), elemen div menumpuk ke bawah. Begitu kita beri <code>display: flex</code>, mereka
+    langsung berjejer ke samping.</p>
+
+  <div class="container container1">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+  <h2>2. flex-direction (Menentukan Sumbu/arah)</h2>
+  <p>Menentukan arah barisan (Main Axis). Ingat: Jika direction berubah, maka fungsi alignment/perataan juga ikut
+    berubah arah!
+  </p>
+
+  <div class="container container2">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+  <h2>3. justify-content (Alignment di Main Axis)</h2>
+  <p>Mengatur bagaimana item berbaris di <strong>Main Axis</strong>. Sangat berguna untuk mendistribusikan ruang kosong.
+  </p>
+
+  <div class="container container3">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+  <h2>4. gap</h2>
+  <p>Dulu kita butuh <code>margin</code> untuk memisahkan kotak. Sekarang cukup gunakan <code>gap</code> di parent-nya.
+    Kelebihannya: tidak ada margin sisa di item terakhir!</p>
+
+  <div class="container container4">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+  <h2>5. align-items (Alignment di Cross Axis)</h2>
+  <p>Mengatur perataan/alignment di <strong>Cross Axis</strong> (tegak lurus dengan arah barisan). Di sini wadah diberi
+    tinggi
+    300px agar terlihat bedanya.</p>
+
+  <div class="container container5">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+  <h2>6. flex-wrap & align-content</h2>
+  <p><code>flex-wrap</code> membuat item pindah ke baris baru. Jika sudah ada multi-baris, kita gunakan
+    <code>align-content</code> untuk mengatur jarak antar tumpukan baris tersebut.
+  </p>
+
+  <div class="container container6">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+    <div class="box empat">4</div>
+    <div class="box lima">5</div>
+  </div>
+
+</body>
+
+</html>
