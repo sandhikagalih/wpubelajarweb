@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Flexbox 2 - Item Properties</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif, Arial;
+      background-color: #f1f5f9;
+      color: #334155;
+      padding: 50px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #1e293b;
+    }
+
+    h2 {
+      margin-top: 80px;
+      margin-bottom: 20px;
+      border-left: 5px solid #7c3aed;
+      padding-left: 15px;
+      color: #5b21b6;
+    }
+
+    p {
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 100px;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .satu {
+      background-color: #BADA55;
+    }
+
+    .dua {
+      background-color: #9b59b6;
+    }
+
+    .tiga {
+      background-color: #f1c40f;
+    }
+
+    .container {
+      background-color: #fff;
+      border: 4px dashed #cbd5e1;
+      margin-bottom: 20px;
+      display: flex;
+      padding: 10px;
+      min-height: 150px;
+    }
+
+    .container1 {
+      flex-direction: row-reverse;
+    }
+
+    .container1 .dua {
+      order: 1;
+    }
+
+    .container1 .satu {
+      order: 3;
+    }
+
+    .container1 .tiga {
+      order: 2;
+    }
+
+    .container2 {
+      width: 600px;
+    }
+
+    .container2 .satu {
+      flex-grow: 1;
+    }
+
+    .container2 .dua {
+      flex-grow: 2;
+    }
+
+    .container2 .tiga {
+      flex-grow: 3;
+    }
+
+    .container3 {
+      width: 350px;
+    }
+
+    .container3 .box {
+      width: 200px;
+    }
+
+    .container3 .dua {
+      flex-shrink: 2;
+    }
+
+    .container4 {
+      height: 300px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container4 .dua {
+      align-self: center;
+    }
+
+    .container4 .tiga {
+      align-self: flex-end;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Eksperimen Flex Item Properties</h1>
+  <p>Di sini kita fokus pada properti yang dipasang pada <strong>elemen child/item</strong>, bukan container-nya.</p>
+
+  <h2>1. order</h2>
+  <div class="container container1">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+
+  <h2>2. flex-grow</h2>
+  <div class="container container2">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+  <h2>3. flex-shrink</h2>
+  <div class="container container3">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+  <h2>4. align-self</h2>
+  <div class="container container4">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+</body>
+
+</html>
