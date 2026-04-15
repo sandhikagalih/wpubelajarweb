@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Flexbox 3 - Real World Cases</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif, Arial;
+      background-color: #f1f5f9;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    h1.main-title {
+      padding: 40px 20px 10px;
+      text-align: center;
+      color: #1e293b;
+    }
+
+    p.main-desc {
+      text-align: center;
+      margin-bottom: 50px;
+      color: #64748b;
+    }
+
+    section {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto 60px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    section:last-of-type {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      border-left: 5px solid #0ea5e9;
+      padding-left: 15px;
+      color: #0c4a6e;
+      font-size: 1.25rem;
+    }
+
+    .demo-area {
+      border: 2px dashed #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f8fafc;
+    }
+
+    .navbar {
+      background-color: #1e293b;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+    }
+
+    .nav-menu {
+      list-style: none;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .centering-container {
+      height: 200px;
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .card-group {}
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #0ea5e9;
+    }
+
+    .search-container {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .search-input {
+      padding: 12px;
+      border: 2px solid #cbd5e1;
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      outline: none;
+    }
+
+    .search-btn {
+      height: 45px;
+      padding: 0 20px;
+      background: #0ea5e9;
+      color: white;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .chat-item {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      background-color: #cbd5e1;
+      border-radius: 50%;
+    }
+
+    .gallery {}
+
+    .gallery-item {
+      height: 150px;
+      background-color: #0ea5e9;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+    }
+
+    main {}
+
+    footer {
+      background-color: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    footer p {
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <h1 class="main-title">Flexbox Real-World Examples</h1>
+    <p class="main-desc">Implementasi praktis teknik Flexbox yang paling sering digunakan.</p>
+
+    <section>
+      <h2>1. Modern Navbar</h2>
+      <div class="demo-area">
+        <nav class="navbar">
+          <div class="logo"><strong>WPU</strong>COURSE</div>
+          <ul class="nav-menu">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Produk</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Perfect Centering</h2>
+      <div class="demo-area">
+        <div class="centering-container">Aku di tengah!</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Equal Height Cards</h2>
+      <div class="demo-area">
+        <div class="card-group">
+          <div class="card">
+            <h3>Opsi A</h3>
+            <p>Teks pendek.</p>
+          </div>
+          <div class="card">
+            <h3>Opsi B</h3>
+            <p>Teks panjang Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae est impedit ex numquam
+              nihil rerum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Input Group</h2>
+      <div class="demo-area">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Cari sesuatu...">
+          <button class="search-btn">CARI</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Media Object</h2>
+      <div class="demo-area">
+        <div class="chat-item">
+          <div class="avatar"></div>
+          <div class="chat-content">
+            <strong>Sandhika Galih</strong>
+            <p>Halo semuanya! Mari kita selesaikan chapter Flexbox ini.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. Fluid Image Gallery</h2>
+      <div class="demo-area">
+        <div class="gallery">
+          <div class="gallery-item">1</div>
+          <div class="gallery-item">2</div>
+          <div class="gallery-item">3</div>
+          <div class="gallery-item">4</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Web Programming Unpas. All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>

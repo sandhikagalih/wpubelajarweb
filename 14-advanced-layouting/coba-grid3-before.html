@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan CSS Grid 3 - Real World Cases</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif, Arial;
+      background-color: #f1f5f9;
+      color: #334155;
+      line-height: 1.6;
+
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    body>header {
+      padding: 40px 20px 0;
+      text-align: center;
+    }
+
+    h1.main-title {
+      color: #1e293b;
+    }
+
+    p.main-desc {
+      margin-top: 8px;
+      margin-bottom: 50px;
+      color: #64748b;
+    }
+
+    section {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto 60px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      border-left: 5px solid #7c3aed;
+      padding-left: 15px;
+      color: #4c1d95;
+      font-size: 1.25rem;
+    }
+
+    .demo-area {
+      border: 2px dashed #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f8fafc;
+    }
+
+
+    /* ============================================ */
+    /* --- CASE 1: PAGE LAYOUT (GRID AREAS) ---    */
+    /* ============================================ */
+    .page-layout {
+      min-height: 300px;
+    }
+
+    .page-layout .pg-header {
+      background: #1e293b;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .page-layout .pg-sidebar {
+      background: #334155;
+      color: #cbd5e1;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .page-layout .pg-sidebar ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .page-layout .pg-sidebar ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #475569;
+    }
+
+    .page-layout .pg-sidebar ul li:last-child {
+      border: none;
+    }
+
+    .page-layout .pg-content {
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .page-layout .pg-content h3 {
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .page-layout .pg-footer {
+      background: #0f172a;
+      color: #64748b;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+
+    /* ============================================ */
+    /* --- CASE 2: RESPONSIVE CARD GRID ---        */
+    /* ============================================ */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card .card-img {
+      height: 120px;
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+    }
+
+    .product-card .card-body {
+      padding: 15px;
+    }
+
+    .product-card .card-body h3 {
+      font-size: 1rem;
+      color: #1e293b;
+      margin-bottom: 5px;
+    }
+
+    .product-card .card-body p {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    .product-card .card-body .price {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #7c3aed;
+      font-size: 1.1rem;
+    }
+
+
+    /* ============================================ */
+    /* --- CASE 3: DASHBOARD STATS ---             */
+    /* ============================================ */
+    .dashboard {
+      display: grid;
+      gap: 15px;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .stat-card .stat-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+    }
+
+    .stat-card .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #1e293b;
+    }
+
+    .stat-card .stat-change {
+      font-size: 0.8rem;
+      color: #10b981;
+      margin-top: 4px;
+    }
+
+    .stat-chart {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      color: white;
+      border-radius: 10px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stat-chart p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    .stat-activity {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 0.85rem;
+    }
+
+    .stat-activity h4 {
+      color: #1e293b;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .activity-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+    }
+
+    .activity-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7c3aed;
+      flex-shrink: 0;
+    }
+
+
+    /* ============================================ */
+    /* --- CASE 4: MAGAZINE / BLOG LAYOUT ---      */
+    /* ============================================ */
+    .blog-layout {
+      display: grid;
+      gap: 15px;
+    }
+
+    .blog-featured {
+      background: linear-gradient(160deg, #0f172a 50%, #1e293b);
+      color: white;
+      border-radius: 10px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 300px;
+    }
+
+    .blog-featured .tag {
+      display: inline-block;
+      background: #7c3aed;
+      color: white;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+
+    .blog-featured h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .blog-featured p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .blog-small {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    .blog-small .tag {
+      display: inline-block;
+      background: #ede9fe;
+      color: #7c3aed;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .blog-small h3 {
+      font-size: 0.95rem;
+      color: #1e293b;
+      margin-bottom: 5px;
+    }
+
+    .blog-small p {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+
+    /* ============================================ */
+    /* --- CASE 5: PHOTO GALLERY (MASONRY-LIKE) -- */
+    /* ============================================ */
+    .photo-gallery {
+      display: grid;
+      gap: 10px;
+    }
+
+    .photo {
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .photo:nth-child(1) {
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    }
+
+    .photo:nth-child(2) {
+      background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    }
+
+    .photo:nth-child(3) {
+      background: linear-gradient(135deg, #10b981, #34d399);
+    }
+
+    .photo:nth-child(4) {
+      background: linear-gradient(135deg, #f59e0b, #fcd34d);
+      color: #78350f;
+    }
+
+    .photo:nth-child(5) {
+      background: linear-gradient(135deg, #ef4444, #f87171);
+    }
+
+    .photo:nth-child(6) {
+      background: linear-gradient(135deg, #8b5cf6, #c4b5fd);
+    }
+
+    .photo:nth-child(7) {
+      background: linear-gradient(135deg, #06b6d4, #67e8f9);
+      color: #164e63;
+    }
+
+
+    /* ============================================ */
+    /* --- CASE 6: PRICING TABLE ---               */
+    /* ============================================ */
+    .pricing-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .pricing-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .pricing-card.popular {
+      border-color: #7c3aed;
+      background: linear-gradient(160deg, #1e293b, #111827);
+      color: white;
+      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+    }
+
+    .pricing-card .plan-name {
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #7c3aed;
+      margin-bottom: 12px;
+    }
+
+    .pricing-card.popular .plan-name {
+      color: #a78bfa;
+    }
+
+    .pricing-card .plan-price {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #1e293b;
+    }
+
+    .pricing-card.popular .plan-price {
+      color: white;
+    }
+
+    .pricing-card .plan-price span {
+      font-size: 1rem;
+      font-weight: normal;
+      color: #94a3b8;
+    }
+
+    .pricing-card .plan-desc {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin: 8px 0 20px;
+    }
+
+    .pricing-card.popular .plan-desc {
+      color: #94a3b8;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      text-align: left;
+      font-size: 0.875rem;
+      color: #475569;
+      margin-bottom: 25px;
+    }
+
+    .pricing-card.popular ul {
+      color: #cbd5e1;
+    }
+
+    .pricing-card ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .pricing-card.popular ul li {
+      border-color: #334155;
+    }
+
+    .pricing-card ul li::before {
+      content: "✓ ";
+      color: #7c3aed;
+      font-weight: bold;
+    }
+
+    .pricing-card.popular ul li::before {
+      color: #a78bfa;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px solid #7c3aed;
+      background: transparent;
+      color: #7c3aed;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: #7c3aed;
+      color: white;
+    }
+
+    .btn.btn-primary {
+      background: #7c3aed;
+      color: white;
+    }
+
+    .btn.btn-primary:hover {
+      background: #6d28d9;
+      border-color: #6d28d9;
+    }
+
+
+    footer {
+      background-color: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="main-title">CSS Grid Real-World Examples</h1>
+    <p class="main-desc">Implementasi praktis teknik CSS Grid yang paling sering digunakan di industri.</p>
+  </header>
+
+  <main>
+
+    <!-- ======================== -->
+    <!-- CASE 1: PAGE LAYOUT     -->
+    <!-- ======================== -->
+    <section>
+      <h2>1. Page Layout (Grid Template Areas)</h2>
+
+      <div class="demo-area">
+        <div class="page-layout">
+          <div class="pg-header">🌐 WPUCOURSE — Header</div>
+          <div class="pg-sidebar">
+            <strong>Navigasi</strong>
+            <ul>
+              <li>Beranda</li>
+              <li>Artikel</li>
+              <li>Proyek</li>
+              <li>Kontak</li>
+            </ul>
+          </div>
+          <div class="pg-content">
+            <h3>Konten Utama</h3>
+            <p>Inilah area konten yang fleksibel.</p>
+          </div>
+          <div class="pg-footer">© 2026 WPUCourse. All Rights Reserved.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================== -->
+    <!-- CASE 2: CARD GRID       -->
+    <!-- ======================== -->
+    <section>
+      <h2>2. Responsive Product Card Grid (auto-fit + minmax)</h2>
+      <div class="demo-area">
+        <div class="card-grid">
+          <div class="product-card">
+            <div class="card-img">🎧</div>
+            <div class="card-body">
+              <h3>Headphone Pro X</h3>
+              <p>Audio jernih, baterai tahan 36 jam.</p>
+              <div class="price">Rp 1.200.000</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="card-img">⌨️</div>
+            <div class="card-body">
+              <h3>Keyboard Mekanikal</h3>
+              <p>Switch red, RGB per-key.</p>
+              <div class="price">Rp 850.000</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="card-img">🖥️</div>
+            <div class="card-body">
+              <h3>Monitor 4K 27"</h3>
+              <p>Panel IPS, 144Hz, HDR400.</p>
+              <div class="price">Rp 4.500.000</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="card-img">🖱️</div>
+            <div class="card-body">
+              <h3>Mouse Wireless</h3>
+              <p>Sensor 25K DPI, ringan 61g.</p>
+              <div class="price">Rp 650.000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================== -->
+    <!-- CASE 3: DASHBOARD       -->
+    <!-- ======================== -->
+    <section>
+      <h2>3. Dashboard Stats (Grid + Item Spanning)</h2>
+      <div class="demo-area">
+        <div class="dashboard">
+          <div class="stat-card">
+            <div class="stat-label">Total User</div>
+            <div class="stat-value">12.4K</div>
+            <div class="stat-change">↑ 8.2% bulan ini</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pendapatan</div>
+            <div class="stat-value">Rp 48M</div>
+            <div class="stat-change">↑ 12.1% bulan ini</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Transaksi</div>
+            <div class="stat-value">3.820</div>
+            <div class="stat-change">↑ 5.4% bulan ini</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Bounce Rate</div>
+            <div class="stat-value">32%</div>
+            <div class="stat-change" style="color:#ef4444;">↓ 2.1% bulan ini</div>
+          </div>
+
+          <div class="stat-chart">
+            <p>📊 Area Chart (Simulasi)</p>
+            <div style="font-size: 3rem; letter-spacing: 5px;">📈</div>
+            <p style="font-size: 0.8rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolores. </p>
+          </div>
+
+          <div class="stat-activity">
+            <h4>Aktivitas Terbaru</h4>
+            <div class="activity-item">
+              <div class="activity-dot"></div> Ali mendaftar
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot"></div> Budi checkout
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot"></div> Citra mengirim tiket
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot"></div> Deni membatalkan
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================== -->
+    <!-- CASE 4: BLOG LAYOUT     -->
+    <!-- ======================== -->
+    <section>
+      <h2>4. Magazine / Blog Layout (Row Spanning)</h2>
+
+      <div class="demo-area">
+        <div class="blog-layout">
+          <div class="blog-featured">
+            <div class="tag">✨ Featured</div>
+            <h3>Menguasai CSS Grid: Dari Nol Hingga Pro</h3>
+            <p>Pelajari cara membangun layout web modern yang kompleks dengan teknik CSS Grid yang tepat dan efisien.
+            </p>
+          </div>
+
+          <div class="blog-small">
+            <div class="tag">Tutorial</div>
+            <h3>10 Tips Flexbox yang Wajib Kamu Tahu</h3>
+            <p>Kumpulan trik Flexbox paling berguna dalam pengembangan UI sehari-hari.</p>
+          </div>
+          <div class="blog-small">
+            <div class="tag">Opini</div>
+            <h3>Grid vs Flexbox: Kapan Memakai Yang Mana?</h3>
+            <p>Panduan singkat untuk memilih layout tool yang tepat sesuai kebutuhan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================== -->
+    <!-- CASE 5: PHOTO GALLERY   -->
+    <!-- ======================== -->
+    <section>
+      <h2>5. Photo Gallery (grid-row: span)</h2>
+      <div class="demo-area">
+        <div class="photo-gallery">
+          <div class="photo">Foto 1</div>
+          <div class="photo">Foto 2</div>
+          <div class="photo">Foto 3</div>
+          <div class="photo">Foto 4</div>
+          <div class="photo">Foto 5</div>
+          <div class="photo">Foto 6</div>
+          <div class="photo">Foto 7</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================== -->
+    <!-- CASE 6: PRICING TABLE   -->
+    <!-- ======================== -->
+    <section>
+      <h2>6. Pricing Table (Grid 3 Kolom)</h2>
+
+      <div class="demo-area">
+        <div class="pricing-grid">
+
+          <div class="pricing-card">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">Gratis <span>/ bulan</span></div>
+            <div class="plan-desc">Untuk yang baru mulai belajar.</div>
+            <ul>
+              <li>5 Proyek</li>
+              <li>1 GB Storage</li>
+              <li>Akses Komunitas</li>
+            </ul>
+            <button class="btn">Mulai Gratis</button>
+          </div>
+
+          <div class="pricing-card popular">
+            <div class="plan-name">⭐ Pro</div>
+            <div class="plan-price">Rp 99K <span>/ bulan</span></div>
+            <div class="plan-desc">Paling populer untuk developer serius.</div>
+            <ul>
+              <li>Proyek Tak Terbatas</li>
+              <li>50 GB Storage</li>
+              <li>Prioritas Support</li>
+              <li>Akses semua materi</li>
+            </ul>
+            <button class="btn btn-primary">Pilih Pro</button>
+          </div>
+
+          <div class="pricing-card">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">Custom <span>/ bulan</span></div>
+            <div class="plan-desc">Untuk tim dan perusahaan besar.</div>
+            <ul>
+              <li>Semua fitur Pro</li>
+              <li>Storage Tak Terbatas</li>
+              <li>SLA & Dedicated Support</li>
+            </ul>
+            <button class="btn">Hubungi Kami</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 WPU. All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>

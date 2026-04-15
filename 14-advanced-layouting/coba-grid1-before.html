@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan CSS Grid 1 - WPU</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif, Arial;
+      background-color: #f1f5f9;
+      color: #334155;
+      padding: 50px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #1e293b;
+    }
+
+    h2 {
+      margin-top: 80px;
+      margin-bottom: 20px;
+      border-left: 5px solid #10b981;
+      padding-left: 15px;
+      color: #065f46;
+    }
+
+    p {
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+
+    .item {
+      background-color: #3b82f6;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      min-height: 100px;
+    }
+
+    .satu {
+      background-color: #BADA55;
+      color: #333;
+    }
+
+    .dua {
+      background-color: #9b59b6;
+    }
+
+    .tiga {
+      background-color: #f1c40f;
+      color: #333;
+    }
+
+    .container {
+      background-color: #fff;
+      border: 4px dashed #cbd5e1;
+      padding: 15px;
+      margin-bottom: 20px;
+      display: grid;
+    }
+
+    .text-demo {
+      padding: 15px;
+      font-size: 0.9rem;
+      font-weight: normal;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Eksperimen CSS Grid Bagian 2: Fondasi & Sizing</h1>
+  <p>Silakan buka <strong>Inspect Element (F12)</strong>, lalu klik badge <strong>"grid"</strong> pada elemen kontainer
+    untuk melihat visualisasi jalurnya.</p>
+
+  <h2>1. Defining Columns (px vs fr)</h2>
+
+  <div class="container container1">
+    <div class="item satu">200px</div>
+    <div class="item dua">1fr</div>
+    <div class="item tiga">1fr</div>
+  </div>
+
+
+  <h2>2. repeat() & gap</h2>
+
+  <div class="container container2">
+    <div class="item satu">1</div>
+    <div class="item dua">2</div>
+    <div class="item tiga">3</div>
+    <div class="item satu">4</div>
+    <div class="item dua">5</div>
+    <div class="item tiga">6</div>
+  </div>
+
+
+  <h2>3. min-content & max-content</h2>
+
+  <div class="container container3">
+    <div class="item satu text-demo">Kolom Ini Mencoba Mengecil (min-content)</div>
+    <div class="item dua">Sisa Ruang</div>
+    <div class="item tiga text-demo">Kolom Ini Memanjang Mengikuti Teks (max-content)</div>
+  </div>
+
+</body>
+
+</html>
