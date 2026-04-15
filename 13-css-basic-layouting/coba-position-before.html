@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan CSS Position - WPU</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      padding: 50px;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .satu {
+      background-color: #BADA55;
+    }
+
+    .dua {
+      background-color: #9b59b6;
+    }
+
+    .tiga {
+      background-color: #f1c40f;
+    }
+
+    .container {
+      border: 8px solid #34495e;
+      width: 324px;
+      height: 324px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Eksperimen CSS Position</h1>
+
+  <h2>1. Position: Static (Normal Flow)</h2>
+  <div class="box satu">1</div>
+  <div class="box dua">2</div>
+  <div class="box tiga">3</div>
+
+
+  <h2>2. Position: Relative</h2>
+  <div class="box satu">1</div>
+  <div class="box dua">2</div>
+  <div class="box tiga">3</div>
+
+  <h2>3. Position: Absolute (Relatif ke Body)</h2>
+  <div class="box satu">1</div>
+  <div class="box dua">2</div>
+  <div class="box tiga">3</div>
+
+  <h2>4. Position: Absolute (Relatif ke Parent)</h2>
+  <div class="container">
+    <div class="box satu">1</div>
+    <div class="box dua">2</div>
+    <div class="box tiga">3</div>
+  </div>
+
+</body>
+
+</html>
