@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter';
+  background-color: #0f172a;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #fff;
+  font-family: 'Poppins';
+}
+
+section:not(#hero, #gallery) {
+  padding: 60px 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+section h3 {
+  color: #06b6d4;
+  font-size: 2em;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(15, 23, 42, 0.9);
+  border-bottom: 2px solid #1e293b;
+  padding: 1em 2em;
+}
+
+header h1 {
+  color: #06b6d4;
+  font-size: 1.5em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+nav ul a:hover {
+  color: #06b6d4;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#hero {
+  text-align: center;
+  background-image: linear-gradient(to bottom, #1e293b, #0f172a);
+  padding: 100px 20px;
+  border-radius: 8px;
+}
+
+#hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: #cbd5e1;
+}
+
+#hero a {
+  display: inline-block;
+  background-color: #06b6d4;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.8);
+}
+
+#hero a:hover {
+  background-color: #0597b1;
+}
+
+#about p {
+  margin-bottom: 1em;
+  text-indent: 2em;
+  text-align: center;
+}
+
+#lineup ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+#lineup ul li {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+#lineup ul li:hover {
+  outline: 1px solid #06b6d4;
+}
+
+#lineup .artist-card {
+  position: relative;
+}
+
+#lineup .day-badge {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f43f5e;
+  color: white;
+  padding: 3px 8px;
+  font-size: 0.6rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+#lineup img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+  border: 3px solid #06b6d4;
+}
+
+#schedule table {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+#schedule th,
+#schedule td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: #334155;
+}
+
+#schedule th {
+  background-color: #06b6d4;
+  color: #0f172a;
+}
+
+#schedule tbody tr:nth-child(even) {
+  background-color: #263346;
+}
+
+#schedule tbody tr:hover {
+  background-color: #334155;
+}
+
+#tickets form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+#tickets label {
+  display: block;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+}
+
+#tickets input,
+#tickets select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #475569;
+  border-radius: 5px;
+  background-color: #0f172a;
+  color: white;
+}
+
+#tickets input:focus,
+#tickets select:focus {
+  outline: 2px solid #06b6d4;
+}
+
+#tickets button[type='submit'] {
+  width: 100%;
+  padding: 12px;
+  background-color: #06b6d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#tickets button[type='submit']:hover {
+  background-color: #0597b1;
+}
+
+#gallery {
+  padding: 100px 20px;
+}
+
+#gallery ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+#gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid #1e293b;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #06b6d4;
+  text-decoration: none;
+}
+
+.floating-ticket-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #fde047;
+  color: #0f172a;
+  padding: 15px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.floating-ticket-btn:hover {
+  background-color: #facc15;
+}
